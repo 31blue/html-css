@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>테이블 관련 요소 ｜ Techit</title>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid currentColor;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="./../../index.html">처음으로</a>
+    <h1>테이블 관련 요소</h1>
+    <table border="1">
+      <captionc>과목별 성적표</captionc>
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th scope="col">HTML</th>
+          <th scope="col">CSS</th>
+          <th scope="col">Javascript</th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <td>&nbsp; 1명</td>
+          <td>part1</td>
+          <td>part2</td>
+          <td>part3</td>
+        </tr>
+      </tfoot>
+      <tbody>
+        <tr>
+          <th>김지영</th>
+          <td>88</td>
+          <td>77</td>
+          <td>82</td>
+        </tr>
+        <tr>
+          <th>홍길동</th>
+          <td>98</td>
+          <td>87</td>
+          <td>92</td>
+        </tr>
+      </tbody>
+
+      <tbody style="background-color: yellow">
+        <tr>
+          <th>박동근</th>
+          <td>78</td>
+          <td>27</td>
+          <td>32</td>
+        </tr>
+        <tr>
+          <th>송주연</th>
+          <td>99</td>
+          <td>89</td>
+          <td>99</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+    <table>
+      <tr>
+        <th>Date</th>
+        <th>Event</th>
+        <th>Venue</th>
+      </tr>
+      <tr>
+        <td>12 February</td>
+        <td>Waltz with Strauss</td>
+        <td>Main Hall</td>
+      </tr>
+    </table>
+    <!-- https://www.w3.org/WAI/tutorials/tables/irregular/ -->
+    <hr />
+    <table>
+      <col />
+      <colgroup span="2"></colgroup>
+      <colgroup span="2"></colgroup>
+      <tr>
+        <td rowspan="2"></td>
+        <th colspan="2" scope="colgroup">Mars</th>
+        <th colspan="2" scope="colgroup">Venus</th>
+      </tr>
+      <tr>
+        <th scope="col">Produced</th>
+        <th scope="col">Sold</th>
+        <th scope="col">Produced</th>
+        <th scope="col">Sold</th>
+      </tr>
+      <tr>
+        <th scope="row">Teddy Bears</th>
+        <td>50,000</td>
+        <td>30,000</td>
+        <td>100,000</td>
+        <td>80,000</td>
+      </tr>
+      <tr>
+        <th scope="row">Board Games</th>
+        <td>10,000</td>
+        <td>5,000</td>
+        <td>12,000</td>
+        <td>9,000</td>
+      </tr>
+    </table>
+    <hr />
+    <table border="1" cellpadding="5" cellspacing="0">
+      <caption>
+        Supplier Contacts
+      </caption>
+      <thead>
+        <tr>
+          <td id="blank">&nbsp;</td>
+          <th id="co1" headers="blank">Example 1 Ltd</th>
+          <th id="co2" headers="blank">Example 2 Co</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th id="c1" headers="blank">Contact</th>
+          <td headers="co1 c1">James Phillips</td>
+          <td headers="co2 c1">Marie Beauchamp</td>
+        </tr>
+        <tr>
+          <th id="c2" headers="blank">Position</th>
+          <td headers="co1 c2">Sales Director</td>
+          <td headers="co2 c2">Sales Manager</td>
+        </tr>
+        <tr>
+          <th id="c3" headers="blank">Email</th>
+          <td headers="co1 c3">jp@1ltd.example.com</td>
+          <td headers="co2 c3">marie@2co.example.com</td>
+        </tr>
+        <tr>
+          <td id="blank">&nbsp;</td>
+          <th id="co3" headers="blank">Example 3 Ltd</th>
+          <th id="co4" headers="blank">Example 4 Inc</th>
+        </tr>
+        <tr>
+          <th id="c1" headers="blank">Contact</th>
+          <td headers="co3 c1">Suzette Jones</td>
+          <td headers="co4 c1">Alex Howe</td>
+        </tr>
+        <tr>
+          <th id="c2" headers="blank">Position</th>
+          <td headers="co3 c2">Sales Officer</td>
+          <td headers="co4 c2">Sales Director</td>
+        </tr>
+        <tr>
+          <th id="c3" headers="blank">Email</th>
+          <td headers="co3 c3">Suz@ltd3.example.com</td>
+          <td headers="co4 c3">howe@4inc.example.com</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+    <table class="lecture-table">
+      <caption>
+        입문자를 위한 Git과 HTML&CSS 과정
+        <span>학습시간, 난이도, 교육비 지원, 평가항목, 수료기준, 정원, 교재 정보 등을 나타낸 표</span>
+      </caption>
+      <tr>
+        <th id="study-time">학습시간</th>
+        <td headers="study-time">09:00 ~ 17:00 ( 28시간 )</td>
+        <th id="difficulty">난이도</th>
+        <td headers="difficulty">초급</td>
+      </tr>
+      <tr>
+        <th id="educational-expenses">교육비 지원</th>
+        <td headers="educational-expenses">고용보험 비환급</td>
+        <th id="evaluation-items">평가항목</th>
+        <td headers="evaluation-items">출석률 100%</td>
+      </tr>
+      <tr>
+        <th id="completion-criteria">수료기준</th>
+        <td headers="completion-criteria">총점 80점 이상시 수료</td>
+        <th id="class-capacity">정원</th>
+        <td headers="class-capacity">24 명</td>
+      </tr>
+      <tr>
+        <th id="learning-textbook">교재정보</th>
+        <td colspan="3" headers="learning-textbook">
+          입문자를 위한 Git과 HTML&CSS<br />
+          HTML & CSS 웹사이트 개발과 디자인 기초 (35,000원)
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
