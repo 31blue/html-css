@@ -5,7 +5,7 @@
 
 /* 요소 선택자 */
 p {
-  color: lime;
+  color: blue;
 }
 
 /* class 선택자 */
@@ -22,3 +22,37 @@ p {
 [title] {
   color: pink;
 }
+
+/* 자손 결합 선택자 */
+p span {
+  color: skyblue;
+}
+
+/* 자식 선택자 */
+p > span {
+  text-decoration: underline;
+}
+
+/* 가상 요소 */
+h1 ::before {
+  content: "첫번째 자식 요소";
+}
+
+h1 ::after {
+  content: "마지막 자식 요소";
+}
+
+p ::first-letter {
+  font-size: 15rem;
+}
+
+::selection {
+  background-color: darkblue;
+  color: white;
+}
+
+/* body *,
+body * :: before,
+body * :: after {
+  box-sizing: border-box;
+} 자손선택자를 이용해서 전체 선택자 만들기 */
