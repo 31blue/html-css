@@ -1,0 +1,41 @@
+@import "./../../common/normalize.css";
+
+.member {
+  background-color: yellow;
+
+  ul {
+    list-style: "";
+  }
+  li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-block: 10px;
+  }
+}
+
+/* li {
+  background-color: pink;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-block: 20px;
+} */
+
+a {
+  text-decoration: none;
+  color: #181818;
+
+  &:hover,
+  &focus {
+    border: 1px solid red;
+  }
+
+  &focus {
+    outline: none;
+  }
+}
+
+.likelion {
+  &__list {
+    background-color: lightgreen;
+  }
+}
