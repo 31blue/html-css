@@ -1,0 +1,45 @@
+@import "./../../common/reset.css";
+
+:root {
+  /* 전역 변수 방식 */
+  /* 색상 - 사용자 정의 속성 */
+  --yellow: #fff100;
+  --blue: #006bff;
+  --skyblue: #08c2ff;
+  --aqua: #bcf2f6;
+  --orange: #fd8b51;
+  --orangered: #ff6500;
+  --primary: var(--yellow);
+  --secondary: var(--blue);
+
+  /* 여백 - 사용자 정의 속성 */
+  --spacing-sm: 12px;
+  --spacing-base: 16px;
+  --spacing-lg: 20px;
+  --gap: var(--spacing-base);
+  /* 글자크기 - 사용자 정의 속성 */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --default-font-size: var(--text-sm);
+}
+
+body {
+  background-color: var(--primary);
+  color: var(--secondary);
+  font-size: var(--default-font-size);
+}
+h1 {
+  padding: var(--gap);
+}
+/* 지역 변수 */
+.local-variable {
+  /* --blue : #1e3e62; */
+  --text-color: var(--custom-color, #7e60bf);
+
+  color: var(--text-color);
+}
+/* html 파일에서     <div class="local-variable" style="--custom-color: red">멋쟁이 사자처럼의 태킷 스쿨과 바른 교육 이듬이 만났습니다. 유익하고 재미있는 프론트엔드 수업이 되길 바랍니다.</div>
+라고 19줄에 써져 있는 부분에서 색깔을 지정하면 그 색깔을 css에 가져와서 그 색깔을 text color라고 해두는 것 */
