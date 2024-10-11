@@ -2,6 +2,7 @@
 
 body {
   font-family: "Pretendard Variable", Pretendard, sans-serif;
+  margin: 50px 50px 200px 50px;
 }
 
 /* px 단위 */
@@ -34,6 +35,24 @@ body {
 /* vw단위 */
 .unit-vw {
   font-size: 3vw;
+}
+
+/* number 단위 */
+.unit-number {
+  font-size: 10px;
+  /* line-height: 10%; */
+  /* line-height:100%; 이 값이 10px*100%=10px임 그런데 p는 지금 20px를 받았음. p는 lineheight로20px가 있어야 글자끼리 안 겹치는데 너무 적은 10px를 받아버려서 문제가 생긴 것*/
+  line-height: 20px;
+  p {
+    font-size: 20px;
+  }
+}
+
+.selector::after {
+  content: "";
+  display: block;
+  clear: both;
+  /* 클리어보쓰를 사용하기 위해서 컨텐츠를 가상으로 만들고, 그게 잘 적용이 안 될테니까 블록까지 넣어서 정말 있는 것처럼 만듦. */
 }
 
 /* CSS 색상 값 */

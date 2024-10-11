@@ -6,6 +6,24 @@ div:not(#awebChomeHelper) {
   padding: 10px;
 }
 
+/* 요소 박스 위치 지정 */
+.percentage-value{
+  border: 1px solid currentColor;
+   padding: 10px !important;
+   margin: 1em !important;
+   font-size: 1em;
+   width: 200px;
+   inline-size: 200px;
+   p{
+    margin:0;
+    padding:10%;
+    border: inherit;
+    position:relative;
+    background-color: tomato;
+    inset-inline-start: 50%;        
+   }
+}
+
 .static {
   background: yellow;
 }
@@ -18,7 +36,7 @@ div:not(#awebChomeHelper) {
 }
 
 .relative-wrapper {
-  position: relative;
+  position: relative;url(about:blank#blocked)
   inset-block-start: 50px;
   inset-inline-start: 100px;
 }
