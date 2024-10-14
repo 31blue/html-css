@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!-- dir="rtl" 이거 lang 옆에 쓰면 오른쪽에서 왼쪽으로 써짐 -->
+<html lang="ko-KR" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>20241011 - 플렉스박스 레이아웃 문제 풀기 ｜ 200팀 회고</title>
+    <link rel="preload" as="style" href="./../assets/font/notoserif/notoserif.css" />
+    <link rel="stylesheet" href="./../assets/font/notoserif/notoserif.css" />
+    <link rel="preload" as="style" href="./../assets/font/pretendard/pretendardvariable-dynamic-subset.css" />
+    <link rel="stylesheet" href="./../assets/font/pretendard/pretendardvariable-dynamic-subset.css" />
+
+    <link rel="stylesheet" href="./../reflect-200/styles/20241011-flex-layout.css" />
+  </head>
+  <body>
+    <h1 class="sr-only">스크롤이 없는 100% 레이아웃</h1>
+    <!-- https://codepen.io/witblog/pen/MqGNeM -->
+
+    <div id="wrap" class="wrap">
+      <header class="header">header 클래스=header</header>
+      <div class="tablist">div 클래스=tablist</div>
+      <div class="content">
+        <div class="aside">div 클래스=aside</div>
+        <div class="main">div 클래스=main</div>
+      </div>
+    </div>
+  </body>
+</html>

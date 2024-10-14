@@ -1,0 +1,40 @@
+body {
+  overflow: hidden;
+  height: 100vh;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.header {
+  --green: #00c63c;
+  height: 50px;
+  background-color: var(--green);
+}
+
+.tablist {
+  background-color: #fff;
+  height: 50px;
+  box-shadow: 3px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.content {
+  display: flex;
+  background-color: #fff;
+  height: calc(100vh - 100px);
+  overflow: hidden;
+
+  .aside {
+    background-color: #e1dfda;
+  }
+  .main {
+  }
+}
