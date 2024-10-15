@@ -1,0 +1,55 @@
+@import "./../../common/base.css";
+
+*,
+*::before,
+*::after {
+}
+
+.masonry-layout {
+  columns: 4;
+
+  figure {
+    margin: 2rem 0;
+    border: 1px solid currentColor;
+    padding: 1rem;
+    position: relative;
+
+    &:first-child {
+      margin-block-start: 0;
+    }
+  }
+
+  img {
+    max-inline-size: 100%;
+    display: block;
+  }
+
+  figcaption {
+    background: rgba(0 0 0 / 0.5);
+    position: absolute;
+    /* inset-block-end: 1rem; */
+    inline-size: 100%;
+    padding: 1rem;
+    color: #fff;
+    backdrop-filter: blur(1px);
+
+    &:hover {
+      backdrop-filter: none;
+    }
+  }
+
+  .cat figcaption {
+    /* inset-block: 1rem;
+    inset-inline: 1rem; */
+    inset: 1rem;
+  }
+  .dog figcaption {
+    inset-block-start: 1rem;
+    inset-inline-end: 1rem;
+  }
+
+  .unsplash figcaption {
+    inset-block-end: 1rem;
+    inset-inline-end: 1rem;
+  }
+}
