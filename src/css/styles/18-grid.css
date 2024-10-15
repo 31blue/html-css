@@ -1,0 +1,147 @@
+@import "./../../common/base.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 50px;
+}
+/* CSS 함수 */
+/* minmax() */
+/* repeat() */
+
+/* 그리드 영역 이름 */
+.grid-box {
+  min-inline-size: 1122px;
+  border: 1px solid rgb(70, 124, 210);
+  padding-inline: 20px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(5, minmax(5, minmax(200px, 1fr)));
+  grid-template-rows: auto;
+  grid-template-areas: "item1 item1 item1 item2 item2" "item3 item3 item4 item4 item4" "item5 item5 item5 item5 item5";
+
+  .grid-item {
+    padding: 0.5rem;
+  }
+
+  .grid-item1 {
+    background-color: #a4c8e1;
+    grid-area: item1;
+  }
+
+  .grid-item2 {
+    background-color: #f8bbd0;
+    grid-area: item2;
+  }
+
+  .grid-item3 {
+    background-color: #b9fbc0;
+    grid-area: item3;
+  }
+
+  .grid-item4 {
+    background-color: #ffcc80;
+    grid-area: item4;
+  }
+
+  .grid-item5 {
+    background-color: #d1c4e9;
+    grid-area: item5;
+  }
+}
+
+/* 그리드 라인 이름 */
+.grid-wrapper {
+  min-inline-size: 1122px;
+  padding-inline: 20px;
+  border: 1px solid rgb(70, 124, 210);
+  gap: 20px;
+  display: grid;
+  grid-template-columns: [techit-start] 1fr [likelion-start]1fr [euid-start] 1fr 1fr [euid-end likelion-end]1fr[techit-end];
+  grid-template-rows: repeat(5, 50px);
+
+  .grid-item {
+    padding: 0.5rem;
+  }
+
+  /* .grid-item:nth-child(odd) {
+    grid-column: 2 span;
+    grid-row: 2 span;
+  } */
+
+  .grid-item1 {
+    background-color: #a4c8e1;
+    grid-column: techit;
+  }
+
+  .grid-item2 {
+    background-color: #f8bbd0;
+    grid-column: likelion;
+  }
+
+  .grid-item3 {
+    background-color: #b9fbc0; /* 중간 초록색 */
+  }
+
+  .grid-item4 {
+    background-color: #ffcc80; /* 중간 주황색 */
+  }
+
+  .grid-item5 {
+    background-color: #d1c4e9; /* 중간 보라색 */
+  }
+}
+
+/* 그리드 라인 번호 */
+.gird-container {
+  min-inline-size: 1122px;
+  padding-inline: 20px;
+  border: 1px solid green;
+  /* grid-auto-flow: column; */
+  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(200px, 1fr));
+  grid-template-rows: repeat(5, 50px);
+  /* grid-template-columns: 1fr 2fr 2fr 3fr 3fr; */
+  /* grid-auto-columns: minmax(200px, 1fr); */
+
+  .grid-item {
+    border: 1px solid red;
+    padding: 0.5rem;
+  }
+
+  .grid-item1 {
+    background-color: #ff0000; /* 중간 하늘색 */
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-row-end: 4;
+    grid-column-end: 2;
+  }
+
+  .grid-item2 {
+    background-color: #ff7f00; /* 주황 */
+    grid-row: 3 / 5;
+    grid-column: 4/6;
+  }
+
+  .grid-item3 {
+    background-color: #ffff00; /* 노랑 */
+    grid-row: 1 / span 2;
+    grid-column: 2 / span 2;
+  }
+
+  .grid-item4 {
+    background-color: #00ff00; /* 초록 */
+    grid-row: 5;
+    grid-column: 1/ -1;
+  }
+
+  .grid-item5 {
+    background-color: #0000ff; /* 파랑 */
+    grid-area: 3/2 / span 3 / span 2;
+  }
+}
