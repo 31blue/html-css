@@ -3,10 +3,30 @@
 *,
 *::before,
 *::after {
+  box-sizing: border-box;
 }
 
 .masonry-layout {
-  columns: 4;
+  columns: 1;
+
+  @media (min-width: 640px) {
+    columns: 2;
+  }
+  @media (min-width: 768px) {
+    columns: 3;
+  }
+
+  @media (min-width: 1024px) {
+    columns: 4;
+  }
+
+  @media (min-width: 1280px) {
+    columns: 5;
+  }
+
+  @media (min-width: 1536px) {
+    columns: 6;
+  }
 
   figure {
     margin: 2rem 0;
@@ -22,34 +42,20 @@
   img {
     max-inline-size: 100%;
     display: block;
-  }
-
-  figcaption {
-    background: rgba(0 0 0 / 0.5);
-    position: absolute;
-    /* inset-block-end: 1rem; */
-    inline-size: 100%;
-    padding: 1rem;
-    color: #fff;
-    backdrop-filter: blur(1px);
+    filter: sepia();
 
     &:hover {
-      backdrop-filter: none;
+      filter: none;
     }
   }
 
-  .cat figcaption {
-    /* inset-block: 1rem;
-    inset-inline: 1rem; */
-    inset: 1rem;
-  }
-  .dog figcaption {
-    inset-block-start: 1rem;
-    inset-inline-end: 1rem;
-  }
-
-  .unsplash figcaption {
+  figcaption {
+    background: rgba(0 0 0 /0.5);
+    position: absolute;
+    padding: 1rem;
+    color: #fff;
+    /* backdrop-filter: blur(10px); */
+    inset-inline: 1rem;
     inset-block-end: 1rem;
-    inset-inline-end: 1rem;
   }
 }
