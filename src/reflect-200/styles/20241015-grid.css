@@ -90,7 +90,7 @@ figure:not(.cat) {
   grid-row: span 2;
 }
 /* 분명 고양이 빼고 딴 애들 두 칸으로 해줘 인데 고양이가 변하는 이상한 현상... 
-어쨌든 height:100%로 사기쳐놓음 ㅠ*/
+어쨌든 height:100%로 늘려놓음 ㅠ*/
 /* figure.cat {
   grid-row: span 2;
 } */
