@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Lisa Simpson in CSS</title>
+    <meta name="description" content="Lisa Simpson in CSS" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="./styles/normalize.css" />
+    <link rel="stylesheet" href="./styles/lisa.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const eyes = document.querySelectorAll(".left-eye, .right-eye");
+
+        document.addEventListener("mousemove", (e) => {
+          eyes.forEach((eye) => {
+            const pupil = eye.querySelector(".left-eye-pupil, .right-eye-pupil");
+            const eyeRect = eye.getBoundingClientRect();
+            const pupilRect = pupil.getBoundingClientRect();
+
+            const centerX = eyeRect.left + eyeRect.width / 2;
+            const centerY = eyeRect.top + eyeRect.height / 2;
+
+            // 눈동자가 눈 밖으로 나가지 않도록 최대 이동 거리를 조정
+            const maxMovement = (eyeRect.width - pupilRect.width) / 2 - 1; // 1px 여유 추가
+
+            // 마우스와 눈 중심 사이의 각도 계산
+            const angle = Math.atan2(e.clientY - centerY, e.clientX - centerX);
+
+            // 각도를 이용해 눈동자의 새 위치 계산
+            const deltaX = Math.cos(angle) * maxMovement;
+            const deltaY = Math.sin(angle) * maxMovement;
+
+            pupil.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>반응하는 리사 만들기</h1>
+    <ul>
+      <li>
+        마우스를 따라다니는 눈동자
+        <p>detail : 얼굴 위에 마우스를 올렸을 때는 한 가운데만 보도록 bc 사시 방지</p>
+      </li>
+      <li>
+        눈 깜박이게 하는 버튼
+        <p>detail : '꽃' 버튼을 누르면 재채기 하듯이 눈을 빠르게 두 번 깜박임, '잠' 버튼 누르면 눈이 아예 감김</p>
+      </li>
+      <li>
+        반응형으로 만들기
+        <p>detail : 처음 크기를 아주 큰 크기로 만든 다음 화면을 작게 줄이면 화면 사이즈에 맞게 리사가 작아지도록?</p>
+      </li>
+    </ul>
+    <div id="lisa">
+      <div class="head">
+        <div class="no-border body head-main"></div>
+        <div class="no-border body head-main2"></div>
+        <div class="no-border body head-main3"></div>
+
+        <div class="no-border hair9"></div>
+        <div class="no-border hair10"></div>
+
+        <div class="body hair hair1"></div>
+        <div class="body hair hair2"></div>
+        <div class="body hair hair3"></div>
+        <div class="body hair hair4"></div>
+        <div class="body hair hair5"></div>
+        <div class="body hair hair6"></div>
+        <div class="body hair hair7"></div>
+        <div class="body hair hair8"></div>
+
+        <div class="body mouth-lip2"></div>
+        <div class="body mouth-lip"></div>
+        <div class="no-border body neck"></div>
+        <div class="no-border body mouth"></div>
+        <div class="no-border body neck2"></div>
+        <div class="no-border body neck3"></div>
+        <div class="no-border mouth-smile"></div>
+
+        <!-- The ear -->
+        <div class="body ear">
+          <div class="no-border inner1"></div>
+          <div class="no-border inner2"></div>
+          <div class="no-border body clip"></div>
+        </div>
+
+        <div class="no-border eyelash1 eyelash"></div>
+        <div class="no-border eyelash2 eyelash"></div>
+        <div class="no-border eyelash3 eyelash"></div>
+        <div class="no-border eyelash4 eyelash"></div>
+        <div class="no-border eyelash5 eyelash"></div>
+        <div class="no-border eyelash6 eyelash"></div>
+        <div class="no-border eyelash7 eyelash"></div>
+        <div class="no-border eyelash8 eyelash"></div>
+
+        <!-- The right eye -->
+        <div class="right-eye">
+          <div class="no-border right-eye-pupil"></div>
+          <div class="no-border body eyelid-top"></div>
+          <div class="no-border body eyelid-bottom"></div>
+        </div>
+
+        <!-- The nose -->
+        <div class="no-border body nose"></div>
+        <div class="body nose-tip"></div>
+
+        <!-- The left eye -->
+        <div class="left-eye">
+          <div class="no-border left-eye-pupil"></div>
+          <div class="no-border body eyelid-top"></div>
+          <div class="no-border body eyelid-bottom"></div>
+        </div>
+
+        <div class="necklace necklace1"></div>
+        <div class="necklace necklace2"></div>
+        <div class="necklace necklace3"></div>
+        <div class="necklace necklace5"></div>
+        <div class="necklace necklace4"></div>
+      </div>
+    </div>
+  </body>
+</html>
