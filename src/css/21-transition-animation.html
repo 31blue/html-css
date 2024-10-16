@@ -29,11 +29,17 @@
 
       // Animation
       const buttonAnimation = document.querySelector(".button--animation");
+      const buttonStopAnimation = document.querySelector(".button--stop-animation");
       const fadeBoxes = document.querySelectorAll(".fade-box");
 
       buttonAnimation.addEventListener("click", () => {
         fadeBoxes.forEach((fadeBox) => {
           fadeBox.classList.add("is--animation");
+        });
+      });
+      buttonStopAnimation.addEventListener("click", () => {
+        fadeBoxes.forEach((fadeBox) => {
+          fadeBox.classList.remove("is--animation");
         });
       });
     </script>
@@ -50,6 +56,7 @@
 
     <h2>Animation 속성을 활용한 애니메이션</h2>
     <button type="button" class="button--animation">Go! Animation</button>
+    <button type="button" class="button--stop-animation">Stop! Animation</button>
     <div class="fade-box fade-box1">CSS 애니메이션</div>
     <div class="fade-box fade-box2">CSS 애니메이션</div>
   </body>

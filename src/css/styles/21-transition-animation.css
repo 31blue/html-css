@@ -30,6 +30,8 @@ h2 {
     animation-play-state: paused;
   }
 
+  animation: none;
+
   &.is--animation {
     /* animation-name: fadeEffect;
     animation-duration: 4s;
@@ -38,7 +40,7 @@ h2 {
     animation-direction: alternate;
     animation-timing-function: ease-in-out;
     animation-play-state: running; */
-    animation: faseEffect 4s forwards infinite alternate ease-in-out running;
+    animation: fadeEffect 4s forwards infinite alternate ease-in-out running;
 
     &.fade-box2 {
       animation-delay: 2s;
@@ -76,7 +78,8 @@ h2 {
   margin-block: 20px;
   margin-inline: auto;
   transition: all 2s;
-  transform-origin: left top;
+  /* transform-origin: left top; */
+  transform-origin: center center;
 
   &.is--animation {
     scale: 0.75;
