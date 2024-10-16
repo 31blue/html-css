@@ -1,3 +1,32 @@
+/* 색상 */
+/* :root {
+  --white: #cfcfcf;
+  --black: #0a0a0a;
+  --gray: #3a3a3a;
+  --silver: #8c8c8c;
+  --red: #a11a1a;
+  --orange: #d35400;
+  --yellow: #d4ac0d;
+  --green: #1e5631;
+  --blue: #0d47a1;
+  --violet: #4a148c;
+  --pink: #8e244d;
+} */
+
+:root {
+  --white: #fff;
+  --black: #121212;
+  --gray: #778899;
+  --silver: #d3d3d3;
+  --red: #ef5959;
+  --orange: #ffb37b;
+  --yellow: #feff94;
+  --green: #98fb98;
+  --blue: #83d9ef;
+  --violet: #ad64c5;
+  --pink: #facbf8;
+}
+
 /* 폼 요소 초기화 - 상속 */
 input,
 button,
