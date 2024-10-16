@@ -22,7 +22,7 @@ button {
     block-size: 20%;
     background-color: currentColor;
     border-radius: 100px;
-    transition-duration: all 0.2s;
+    transition: all 0.2s;
   }
 
   .burger-bar-top {
@@ -39,25 +39,25 @@ button {
     inset-block-start: 100%;
     translate: 0 -100%;
     /* transform: translateY(-100%); */
-    /* display: none; */
   }
 
   &:hover {
     .burger-bar-top {
       inset-block-start: 50%;
       translate: 0 -50%;
+      rotate: -45deg;
       /* transform: translateY(-50%) rotate(45deg); */
     }
 
     .burger-bar-middle {
       /* transform: translate(120%, -50%); */
-      translate: 0 -50%;
-    }
-    .burger-bar-bottom {
       translate: 120% -50%;
-      translate: 0 50%;
-      /* inset-block-start: 50%; */
+    }
 
+    .burger-bar-bottom {
+      inset-block-start: 50%;
+      translate: 0 -50%;
+      rotate: 45deg;
       /* transform: translateY(-50%) rotate(-45deg); */
     }
   }
@@ -65,7 +65,7 @@ button {
 
 @keyframes spinner {
   0% {
-    roate: 0deg;
+    rotate: 0deg;
   }
   100% {
     rotate: 360deg;
@@ -78,6 +78,6 @@ button {
   color: var(--red);
 
   svg {
-    animation: spinner 1s infinite;
+    animation: spinner 1s infinite steps(12);
   }
 }
