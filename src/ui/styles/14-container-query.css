@@ -1,6 +1,31 @@
 @import "./../../common/modern-reset.css";
 @import "./../../common/base.css";
 
+/* 다크모드 설정 */
+
+/* .dark{
+  body{
+    color: var(--white);
+    background-color: var(--gray);
+  }
+} */
+
+/* @media (prefers-color-scheme: dark) {
+  body {
+    color: var(--white);
+    background-color: var(--gray);
+  }
+} */
+
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  color: light-dark(var(--gray), var(--white));
+  background-color: light-dark(var(--white), var(--gray));
+}
+
 h1,
 p {
   line-height: 1.5;
@@ -15,58 +40,78 @@ p:not(.card__description) {
 }
 
 /* 카드 컴포넌트 */
-
-.cards {
-  /* padding: 1rem;
-  border: 1px solid var(--red); */
-  container-type: inline-size;
-  container-name: container;
-  gap: 1rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-/* 카드 컴포넌트 */
 .card-wrapper {
-  container-type: inline-size;
-  container-name: wrapper;
-  display: flex;
-
-  /* inline-size: 50%; */
+  container: card-wrapper / inline-size;
+  /* inline-size: 400px; */
 }
 
 .card {
-  flex-direction: row;
+  display: grid;
+  grid-template: "image" "description" / minmax(260px, 1fr);
+  border: 1px solid var(--gray);
+  padding: 1rem;
+  gap: 1rem;
+  color: light-dark(var(--white), var(--gray));
+  background-color: light-dark(var(--blue), var(--light-silver));
 
-  figure {
-    flex: 1;
+  .card__image {
+    grid-area: image;
+    text-align: center;
+
+    .card__link {
+      text-decoration: none;
+      color: inherit;
+      font-style: italic;
+    }
   }
 
-  p {
-    &:nth-of-type(1) {
-      flex: 1;
-    }
+  .card__description {
+    grid-area: description;
+  }
+}
 
-    &:nth-of-type(2) {
-      flex: 2;
+@container (inline-size > 30rem) {
+  .card {
+    grid-template: "image description" / 1fr 2fr;
+
+    .card__description {
+      /* 크기 변경 확인 필요 */
+      font-size: clamp(12px, 10cqi, 30px);
+    }
+  }
+}
+
+@container (inline-size > 50rem) {
+  .card {
+    grid-template: "image description" / 2fr 1fr;
+
+    .card__description {
+      font-size: clamp(14px, 2cqi, 24px);
     }
   }
 }
 
 /* 카드 레이아웃 */
-.card {
-  border: 1px solid var(--gray);
-  padding: 1rem;
-
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1rem;
+}
 
-  img {
-    aspect-ratio: 1 / 0.67;
-    object-fit: cover;
+.card-floating {
+  display: flow-root;
+
+  .card-wrapper {
+    inline-size: 60%;
+    float: inline-start;
+    margin: 0 1rem 1rem 0;
   }
 
-  figcaption {
-    /* margin-block-start: 0.5rem; */
-    text-align: center;
+  p {
+    font-size: 1.5rem;
+
+    &:nth-of-type(1) {
+      margin-block-start: 0;
+    }
   }
 }
